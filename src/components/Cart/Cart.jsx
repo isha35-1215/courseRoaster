@@ -1,12 +1,20 @@
 import React from 'react';
 import './Cart.css';
 
-const Cart = ({ props }) => { 
+const Cart = ({ selectedCourses }) => {
+    console.log(selectedCourses);
+
     return (
-        <div className='container'>
-            <h1></h1>
+        <div>
+            <ol>
+                {selectedCourses.map((course) => (
+                    <li key={course.id}>{course.courseName}</li>
+                ))}
+            </ol>
+            <h4>Total Credit Hour : {selectedCourses.length}</h4>
+            
         </div>
     );
 };
 
-export default Cart; 
+export default Cart;

@@ -5,7 +5,7 @@ import Cart from '../Cart/Cart';
 const Home = () => {
 
     const [allCourse, setAllcourse] = useState([]);
-    const [selectedCourses,setSelectedCourse]=useState([]);
+    const [selectedCourses,setSelectedCourses]=useState([]);
 
     useEffect(() => {
         fetch("./data.json")
@@ -43,7 +43,10 @@ const Home = () => {
                                     </div>
                                     <button 
                                     onClick={()=> handleSelectCourse(course)}
-                                    className='card-btn'>Select</button>
+                                    className='card-btn'
+                                    >
+                                        Select
+                                        </button>
                                 </div>
                             ))
                         }
