@@ -5,12 +5,17 @@ import Cart from '../Cart/Cart';
 const Home = () => {
 
     const [allCourse, setAllcourse] = useState([]);
+    const [selectedCourses,setSelectedCourse]=useState([]);
 
     useEffect(() => {
         fetch("./data.json")
             .then((res) => res.json())
             .then((data) => setAllcourse(data));
     }, []);
+
+    const handleSelectCourse=(course) => {
+        setSelectedCourses([...selectedCourses, course]);
+    }
 
 
     return (
@@ -23,27 +28,29 @@ const Home = () => {
                     <div className="card-container">
                         {
                             allCourse.map((course) => (
-                                <div className="card">
+                                <div key={course.id} className="card">
                                     <div className="card-img">
-                                        <img className='photo' src="https://i.ibb.co/kcdTTPf/web.jpg" alt="" />
+                                        <img className='photo' src={course.coverImg} alt="" />
                                     </div>
                                     <div className="card-content">
-                                        <h2 className='card-title'>Web Development Fundamentals</h2>
-                                        <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, facere.</small>
+                                        <h2 className='card-title'>{course.courseName}</h2>
+                                        <p className='about'><small>{course.about}</small>
                                         </p>
                                         <div className="info">
-                                            <p>Price: 35000</p>
-                                            <p>Credit: 2hr</p>
+                                            <p><i class="fa-solid fa-dollar-sign"></i> Price: {course.price}</p>
+                                            <p><i class="fa-solid fa-book-open"></i> Credit: {course.credit}</p>
                                         </div>
                                     </div>
-                                    <button className='card-btn'>Select</button>
+                                    <button 
+                                    onClick={()=> handleSelectCourse(course)}
+                                    className='card-btn'>Select</button>
                                 </div>
                             ))
                         }
 
                     </div>
                     <div className="cart">
-                        <h1>this is cart</h1>
+                        <Cart selectedCourses={selectedCourses}></Cart>
                     </div>
                 </div>
             </div>
