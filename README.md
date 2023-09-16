@@ -17,7 +17,7 @@ Currently, two official plugins are available:
 
    c. **User Authentication**: Implement user authentication and registration to ensure that only authenticated users can select and register for courses. Create user profiles where users can track their selected courses and other details.
 
-2. **State Management in the Assignment**:
+2. **Explain State Management in the Assignment**:
 
    In the provided React code, state management is primarily handled using React's `useState` and `useEffect` hooks. Here's a breakdown of how state is managed:
 
