@@ -1,9 +1,8 @@
 .cart{
+    text-align: left;
+    padding-right: 15px;
+    padding-left: 20px;
     width: 320px;
     height: 420px;
 }
 
-.course-list{
-    text-align: left;
-    padding-right: 5px;
-}
