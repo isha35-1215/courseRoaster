@@ -5,7 +5,10 @@ import Cart from '../Cart/Cart';
 const Home = () => {
 
     const [allCourse, setAllcourse] = useState([]);
-    const [selectedCourses,setSelectedCourses]=useState([]);
+    const [selectedCourses, setSelectedCourses] = useState([]);
+    const [remaining, setRemaining] = useState(0);
+    const [totalCount, setTotalCount] = useState(0);
+
 
     useEffect(() => {
         fetch("./data.json")
@@ -13,9 +16,33 @@ const Home = () => {
             .then((data) => setAllcourse(data));
     }, []);
 
-    const handleSelectCourse=(course) => {
-        setSelectedCourses([...selectedCourses, course]);
-    }
+    const handleSelectCourse = (course) => {
+        const isExist = selectedCourses.find((item) => item.id == course.id);
+        let count = course.credit;
+
+
+        if (isExist) {
+            return alert("Already Taken!");
+        } else {
+            selectedCourses.forEach((item => {
+                count += item.credit;
+            }));
+
+            const remaining = 20 - count;
+
+            if(count>20){
+                return alert("Credit Limit can't be Exceeded!");
+            }
+            else{
+                setTotalCount(count);
+            }
+
+            setRemaining(remaining);
+
+            setSelectedCourses([...selectedCourses, course]);
+
+        }
+    };
 
 
     return (
@@ -38,22 +65,26 @@ const Home = () => {
                                         </p>
                                         <div className="info">
                                             <p><i class="fa-solid fa-dollar-sign"></i> Price: {course.price}</p>
-                                            <p><i class="fa-solid fa-book-open"></i> Credit: {course.credit}</p>
+                                            <p><i class="fa-solid fa-book-open"></i> Credit: {course.credit}hr</p>
                                         </div>
                                     </div>
-                                    <button 
-                                    onClick={()=> handleSelectCourse(course)}
-                                    className='card-btn'
+                                    <button
+                                        onClick={() => handleSelectCourse(course)}
+                                        className='card-btn'
                                     >
                                         Select
-                                        </button>
+                                    </button>
                                 </div>
                             ))
                         }
 
                     </div>
                     <div className="cart">
-                        <Cart selectedCourses={selectedCourses}></Cart>
+                        <Cart
+                            selectedCourses={selectedCourses}
+                            remaining={remaining}
+                            totalCount={totalCount}>
+                        </Cart>
                     </div>
                 </div>
             </div>

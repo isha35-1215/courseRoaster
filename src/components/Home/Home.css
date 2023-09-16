@@ -55,6 +55,7 @@
 
 .home-container {
     display: flex;
+    gap: 48px;
 }
 
 .card-container {

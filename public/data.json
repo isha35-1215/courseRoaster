@@ -5,7 +5,7 @@
       "coverImg": "https://i.ibb.co/kcdTTPf/web.jpg",
       "about": "Learn the basics of web development, including HTML, CSS, and JavaScript.",
       "price": 35000,
-      "credit": "1hr" 
+      "credit": 3
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "coverImg": "https://i.ibb.co/0hqzvRC/python.jpg",
       "about": "Master data science techniques using Python programming language.",
       "price": 30000,
-      "credit": "3hr"
+      "credit": 5
     },
     {
       "id": 3,
@@ -21,7 +21,7 @@
       "coverImg": "https://i.ibb.co/Tk8gXWw/marketing.jpg",
       "about": "Explore the world of digital marketing and online advertising strategies.",
       "price": 28000,
-      "credit": "8hr"
+      "credit": 3
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "coverImg": "https://i.ibb.co/v3ZnMrX/app.jpg",
       "about": "Create cross-platform mobile apps using React Native framework.",
       "price": 25000,
-      "credit": "2hr"
+      "credit": 5
     },
     {
       "id": 5,
@@ -37,7 +37,7 @@
       "coverImg": "https://i.ibb.co/zZMzCTM/machine.jpg",
       "about": "Dive into machine learning concepts and algorithms for AI applications.",
       "price": 32000,
-      "credit": "7hr"
+      "credit": 5
     },
     {
       "id": 6,
@@ -45,7 +45,7 @@
       "coverImg": "https://i.ibb.co/CtRvzHB/graphic.jpg",
       "about": "Get started with graphic design and learn the basics of design software.",
       "price": 15000,
-      "credit": "2hr"
+      "credit": 2
     },
     {
       "id": 7,
@@ -53,7 +53,7 @@
       "coverImg": "https://i.ibb.co/vv2YJLB/finance.jpg",
       "about": "Gain an understanding of financial concepts and investment strategies.",
       "price": 24000,
-      "credit": "5hr"
+      "credit": 2
     },
     {
       "id": 8,
@@ -61,15 +61,15 @@
       "coverImg": "https://i.ibb.co/h1cJJRc/photography.jpg",
       "about": "Learn photography techniques, composition, and post-processing.",
       "price": 10000,
-      "credit": "5hr"
+      "credit": 1
     },
     {
       "id": 9,
-      "courseName": "Video Editing with Adobe Premiere Pro",
+      "courseName": "Editing with Adobe Premiere Pro",
       "coverImg": "https://i.ibb.co/DWmvYqp/adobe.jpg",
       "about": "Edit and produce professional videos using Adobe Premiere Pro.",
       "price": 15000,
-      "credit": "6hr"
+      "credit": 2
     }
   ]
   
